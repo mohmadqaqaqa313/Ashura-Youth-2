@@ -1,0 +1,292 @@
+/* ======= إعدادات عامة ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tahoma', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0b0b1a 0%, #1a1a2e 100%);
+    color: #f0e6d3;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* ======= تنسيق الصفحتين ======= */
+.page {
+    width: 100%;
+    max-width: 800px;
+    min-height: 90vh;
+    padding: 2rem 1.5rem;
+    background: rgba(20, 20, 40, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ======= الرأس والتذييل ======= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, #ffd700, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+header p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* ======= المحتوى الرئيسي للصفحة الأولى ======= */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 250px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffd700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.hero-image {
+    flex: 0 0 120px;
+    text-align: center;
+}
+
+.icon {
+    font-size: 6rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* ======= الأزرار والروابط ======= */
+.primary-btn,
+.secondary-btn,
+.control-btn {
+    cursor: pointer;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.primary-btn {
+    background: linear-gradient(45deg, #ff6b35, #ff4500);
+    color: #fff;
+    border: none;
+    font-size: 1.3rem;
+    padding: 1rem 2.5rem;
+}
+
+.primary-btn:hover {
+    background: linear-gradient(45deg, #ff4500, #cc3700);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    padding: 0.5rem 1.5rem;
+}
+
+.secondary-btn:hover {
+    background: #ffd700;
+    color: #1a1a2e;
+    transform: scale(1.05);
+}
+
+/* ======= قسم التواصل معنا (الجديد) ======= */
+.contact-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    text-align: center;
+}
+
+.contact-content h3 {
+    font-size: 1.8rem;
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+}
+
+.contact-content p {
+    color: #ccc;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+}
+
+.telegram-btn {
+    display: inline-block;
+    background: #0088cc;
+    color: #fff;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid #0088cc;
+}
+
+.telegram-btn:hover {
+    background: #006699;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+}
+
+/* ======= صفحة الأحاديث ======= */
+.hadith-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.hadith-display {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2.5rem 2rem;
+    border-radius: 30px;
+    border-right: 6px solid #ffd700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#hadithText {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: #f5f0e8;
+    margin-bottom: 1rem;
+}
+
+#hadithIndex {
+    font-size: 1rem;
+    color: #ffd700;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hadith-controls {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.control-btn {
+    background: #2a2a4a;
+    padding: 0.8rem 2rem;
+    min-width: 130px;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+.control-btn:hover {
+    background: #ffd700;
+    color: #1a1a2e;
+    transform: scale(1.05);
+}
+
+/* ======= التجاوب مع الشاشات الصغيرة ======= */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    .hero-image {
+        flex-basis: 80px;
+    }
+    .icon {
+        font-size: 4rem;
+    }
+    #hadithText {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+    .control-btn {
+        min-width: 100px;
+        padding: 0.6rem 1.2rem;
+    }
+    .page {
+        padding: 1rem;
+        border-radius: 20px;
+        min-height: 95vh;
+    }
+    .telegram-btn {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+}

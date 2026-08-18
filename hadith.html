@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>شباب عاشوراء</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="page hadith-page">
+        <header>
+            <h1>📚 أقوال الأمام الحسين عليه السلام</h1>
+            <a href="index.html" class="secondary-btn">🏠 العودة للرئيسية</a>
+        </header>
+
+        <div class="hadith-container">
+            <div class="hadith-display">
+                <p id="hadithText">حديث رقم 1</p>
+                <span id="hadithIndex">1 / 12</span>
+            </div>
+
+            <div class="hadith-controls">
+                <button id="prevBtn" class="control-btn">➡️ السابق</button>
+                <button id="nextBtn" class="control-btn">⬅️ التالي</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>اقوال الأمام الحسين عليه السلام – شباب عاشوراء</p>
+        </footer>
+    </div>
+
+    <script>
+        // ===== قائمة الأحاديث (12 حديثاً) =====
+        const hadiths = [
+            "قال الإمام الحسين(ع): مجالسة أهل الدناءة شر ، ومجالسة أهل الفسق ريبة.",
+            "قال الإمام الحسين(ع): لو رأيتم المعروف رجلا رأيتموه حسنا جميلا تسر الناظرين ولو رأيتم اللؤم رأيتموه سمجا مشوها تنفر منه القلوب وتغض دونه الابصار.",
+            " قال الإمام الحسين(ع): لا تتكلمن فيما لا يعنيك .",
+            "قيل للحسين عليه السلام إنّ أباذر يقول: الفقر أحبّ إليّ من الغنى، فقال الحسين عليه السلام: «رحم الله تعالى أباذر، أمّا أنا فأقول: مَن اتكَلَ على حُسنِ اختيار الله تعالى له، لم يتمنّ غير ما اختاره الله عزّ وجل له.",
+            "قال الحسين عليه السلام: «لِلسّلام سبعونَ حسنَة، تسعٌ وسِتّون للمبتدي، وواحدةٌ لِلرّاد.",
+            "قال الحسين عليه السلام: «البخيل مَن بَخِل بالسّلام.",
+            "قال رجل للحسين عليه السلام ابتداءً: كيف أنت عافاك الله؟ فقال الحسين عليه السلام له: «السّلام قبل الكلام عافاك الله». ثمّ قال عليه السلام: «لا تأذنوا لأحدٍ حتّى يُسلّم»..",
+            "قال الحسين عليه السلام: «الصِّدقُ عِزٌّ، والكِذبُ عجزٌ، والسِرُّ أمانةٌ، والجِوارُ قَرابةٌ، والمعونةُ صَداقةٌ، والعَملُ تَجربَةٌ، والخُلْقُ الحَسَنُ عِبادةٌ، والصَّمتُ زَيْنٌ، والشُّحُّ فقرٌ، والسَّخاءُ غِنًى، والرِّفقُ لُبٌّ.",
+            "روى عبد الله بن عباس، قال لي الحسين عليه السلام: «يا ابنَ عباس، لا تتكلّمنّ بما لا يُعْنيكَ فإنني أخاف عليكَ الوِزرَ، ولا تتكلّمنّ بما يُعنيك حتى تَرى له موضعاً، فَرُبَّ متكلّم قد تكلّمَ بحقٍّ فَعيبَ، ولا تماريَنّ حليماً ولا سفيهاً، فإنّ الحليمَ يقليكَ، والسّفيه يُرديك، ولا تقولَنّ خَلفَ أحدٍ إذا توارى عنكَ، إلا مثلَ ما تُحبُّ أن يقولَ عنكَ إذا توارَيْتَ عنه، واعمل عَملَ عبدٍ يَعلَمُ أنّه مأخوذٌ بالإجرام مُجزيٌ بالإحسان، والسّلام.",
+            "قال الحسين عليه السلام: «مَن سَرَّه أن يُنْسَأ في أجلهِ ويُزداد في رزقه فَلْيَصِل رَحِمَهُ.",
+            "قال الحسين عليه السلام لرجل اغتاب عنده رجلاً: «يا هذا كُفَّ عن الغيبةِ فإنّها إدامُ كلابِ النّار.",
+            "عن الإمام الحسين عليه السلام: «إذا كان يوم القيامة نادى منادٍ: أيّها الناس، من كان له على الله أجرٌ فَلْيَقم، فلا يقوم إلا أهلُ المعروف."
+        ];
+
+        let currentIndex = 0;
+        const hadithText = document.getElementById('hadithText');
+        const hadithIndex = document.getElementById('hadithIndex');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateHadith() {
+            hadithText.textContent = hadiths[currentIndex];
+            hadithIndex.textContent = `${currentIndex + 1} / ${hadiths.length}`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + hadiths.length) % hadiths.length;
+            updateHadith();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % hadiths.length;
+            updateHadith();
+        });
+
+        // عرض أول حديث عند تحميل الصفحة
+        updateHadith();
+    </script>
+</body>
+</html>
