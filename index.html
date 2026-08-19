@@ -4,34 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>شباب عاشوراء</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="page home-page">
+    <!-- سمة الوضع الليلي افتراضياً، يمكن تغييرها بواسطة JavaScript -->
+    <div class="page home-page" data-theme="dark">
         <header>
-            <h1>🌹 شباب عاشوراء 🌹</h1>
-            <p>نهضة شبابية على درب الحسين (ع)</p>
+            <div class="logo">
+                <span class="logo-icon">⚔️</span>
+                <h1>شباب عاشوراء</h1>
+            </div>
+            <div class="header-actions">
+                <p class="subtitle">نهضة شبابية على درب الحسين (ع)</p>
+                <!-- زر التبديل بين الليل والنهار -->
+                <button id="themeToggle" class="theme-toggle" aria-label="تبديل الوضع">
+                    <span class="toggle-icon">🌙</span>
+                </button>
+            </div>
         </header>
 
         <main class="hero">
             <div class="hero-content">
+                <div class="badge">🌿 نستلهم من عاشوراء</div>
                 <h2>نحو بناء مجتمعٍ واعٍ</h2>
                 <p>
                     شباب اليوم هم قادة الغد، نستلهم من ثورة عاشوراء قيم العدل
                     والكرامة والتضحية.
                 </p>
-                <!-- الرابط الذي ينقل إلى صفحة الأحاديث -->
-                <a href="hadith.html" class="primary-btn">📖 اضغط هنا</a>
+                <div class="btn-group">
+                    <a href="hadith.html" class="primary-btn">
+                        <span>📖</span> اضغط هنا
+                    </a>
+                </div>
             </div>
             <div class="hero-image">
-                <span class="icon">⚔️</span>
+                <div class="floating-shapes">
+                    <span class="shape shape1">🌹</span>
+                    <span class="shape shape2">🏹</span>
+                    <span class="shape shape3">☀️</span>
+                </div>
+                <div class="main-icon">⚔️</div>
             </div>
         </main>
 
-        <!-- ====== قسم التواصل معنا (الجديد) ====== -->
         <section class="contact-section">
             <div class="contact-content">
-                <h3>📱 التواصل معنا</h3>
+                <h3>📱 تواصل معنا</h3>
+                <p>انضم إلينا على التيلغرام وكن جزءاً من حملة شباب عاشوراء</p>
                 <a href="https://t.me/S_V_Cc" target="_blank" class="telegram-btn">
                     💬 @S_V_Cc
                 </a>
@@ -42,5 +62,54 @@
             <p>© 2026 شباب عاشوراء – جميع الحقوق محفوظة</p>
         </footer>
     </div>
+
+    <script>
+        (function() {
+            // جلب العناصر
+            const root = document.documentElement;
+            const page = document.querySelector('.page');
+            const toggleBtn = document.getElementById('themeToggle');
+            const toggleIcon = toggleBtn.querySelector('.toggle-icon');
+
+            // التحقق من التفضيل المحفوظ أو تفضيل النظام
+            const savedTheme = localStorage.getItem('theme');
+            let currentTheme = savedTheme || 'dark'; // افتراضي ليلي
+
+            // تطبيق السمة
+            function setTheme(theme) {
+                currentTheme = theme;
+                page.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+
+                // تغيير الأيقونة
+                if (theme === 'dark') {
+                    toggleIcon.textContent = '🌙';
+                } else {
+                    toggleIcon.textContent = '☀️';
+                }
+            }
+
+            // تبديل السمة
+            function toggleTheme() {
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            }
+
+            // مستمع الحدث للزر
+            toggleBtn.addEventListener('click', toggleTheme);
+
+            // تطبيق السمة المحفوظة عند التحميل
+            setTheme(currentTheme);
+
+            // (اختياري) تتبع تفضيل النظام إذا لم يكن هناك تفضيل محفوظ
+            // لكننا جعلنا الافتراضي ليلي، يمكنك إلغاء التعليق على الكود التالي لتغيير ذلك:
+            /*
+            if (!savedTheme) {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                setTheme(prefersDark ? 'dark' : 'light');
+            }
+            */
+        })();
+    </script>
 </body>
 </html>
