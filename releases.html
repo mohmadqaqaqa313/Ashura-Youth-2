@@ -5,105 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>شباب عاشوراء - الإصدارات</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="page releases-page" data-theme="dark">
-        <header>
-            <h1>📚 إصدارات الهيئة</h1>
-            <div class="header-actions">
-                <a href="index.html" class="secondary-btn">🏠 العودة للرئيسية</a>
-                <button id="themeToggle" class="theme-toggle" aria-label="تبديل الوضع">
-                    <span class="toggle-icon">🌙</span>
+    <div class="app" data-theme="dark">
+        <nav class="sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-icon">⚔️</span>
+                <span class="brand-text">شباب عاشوراء</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="hadith.html"><i class="fas fa-book-open"></i> الأحاديث</a></li>
+                <li class="active"><a href="releases.html"><i class="fas fa-newspaper"></i> الإصدارات</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button id="themeToggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
-        </header>
+        </nav>
 
-        <!-- قسم المجلة -->
-        <div class="magazine-container">
-            <!-- العدد الأول -->
-            <div class="magazine-issue">
-                <div class="issue-cover">
-                    <div class="cover-icon">📖</div>
-                    <div class="cover-badge">العدد الأول</div>
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <h1>📚 إصدارات الهيئة</h1>
                 </div>
-                <div class="issue-details">
-                    <h3>مجلة شباب عاشوراء</h3>
-                    <p class="issue-title">علي الأصغر (عليه السلام)</p>
-                    <p class="issue-description">
-                        كتيبٌ يروي قصةَ سيدنا علي الأصغر (عليه السلام)، المظلومِ الشهيدِ، الذي وُسِّدَ الترابَ وهو في عمرِ الزهرةِ، ولم يُكفَّنْ إلا بدمِه وتربةِ كربلاءَ. جمعنا في هذا الكتيبِ ما تناثرَ من رواياتِ المخطوطاتِ القديمةِ والكتبِ المطبوعةِ ، بمساندةٍ وتوفيقٍ من ثلةٍ مباركة، وهم: قناة دراسة المقاتل، وقناة درر الأولياء في إرشاد العقلاء، وخادم فاطمة الزهراء السيد محمد الصادق الموسوي،آملين جميعاً في نشر هذا الكتاب بين أتباع أمير المؤمنين (عليه السلام) ليُشكل نبراساً في إحياء ذكرى هذا الرضيع المظلوم.
-
-                    </p>
-                    <div class="issue-meta">
-                        <span>📅 صدر بتاريخ: 20 / 8 / 2026</span>
-                        <span>📄 32 صفحة</span>
-                    </div>
-                    <!-- زر التحميل يوجه إلى قناة التليجرام -->
-                    <a href="https://t.me/Ashura_youth2/2" target="_blank" class="download-btn">
-                        📥 تحميل العدد
+                <div class="header-right">
+                    <a href="index.html" class="btn-back">
+                        <i class="fas fa-arrow-right"></i> العودة
                     </a>
                 </div>
-            </div>
+            </header>
 
-         
-
-            <!-- العدد الثاني (قريباً) -->
-            <div class="magazine-issue coming-soon">
-                <div class="issue-cover">
-                    <div class="cover-icon">📚</div>
-                    <div class="cover-badge">قريباً</div>
-                </div>
-                <div class="issue-details">
-                    <h3>مجلة شباب عاشوراء</h3>
-                    <p class="issue-title">العدد الثاني – قيد الإعداد</p>
-                    <p class="issue-description">
-                        سيُصدر قريباً بإذن الله، اشترك في قناتنا ليصلك الإعلان.
-                    </p>
-                    <div class="issue-meta">
-                        <span>📅 يُعلن قريباً</span>
+            <section class="releases-grid">
+                <div class="release-card">
+                    <div class="release-cover">
+                        <i class="fas fa-book-open"></i>
+                        <span class="release-number">العدد الأول</span>
                     </div>
-                    <!-- زر التحميل يوجه إلى قناة التليجرام -->
-                    <a href="https://t.me/Ashura_youth2" target="_blank" class="download-btn">
-                        📥 تابعنا للإصدارات
-                    </a>
+                    <div class="release-body">
+                        <h3>هيئه شباب عاشوراء</h3>
+                        <h4>علي الأصغر (عليه السلام)</h4>
+                        <p>كتيبٌ يروي قصةَ سيدنا علي الأصغر (عليه السلام)، المظلومِ الشهيدِ، الذي وُسِّدَ الترابَ وهو في عمرِ الزهرةِ، ولم يُكفَّنْ إلا بدمِه وتربةِ كربلاءَ. جمعنا في هذا الكتيبِ ما تناثرَ من رواياتِ المخطوطاتِ القديمةِ والكتبِ المطبوعةِ ، بمساندةٍ وتوفيقٍ من ثلةٍ مباركة، وهم: قناة دراسة المقاتل، وقناة درر الأولياء في إرشاد العقلاء، وخادم فاطمة الزهراء السيد محمد الصادق الموسوي،آملين جميعاً في نشر هذا الكتاب بين أتباع أمير المؤمنين (عليه السلام) ليُشكل نبراساً في إحياء ذكرى هذا الرضيع المظلوم..</p>
+                        <div class="release-meta">
+                            <span><i class="far fa-calendar-alt"></i> 20 / 8 / 2026</span>
+                            <span><i class="far fa-file-alt"></i> 48 صفحة</span>
+                        </div>
+                        <a href="https://www.mediafire.com/file/1ledqp9pzj2natt" target="_blank" class="btn-download">
+                            <i class="fas fa-download"></i> تحميل العدد
+                        </a>
+                    </div>
                 </div>
+
+              
+
+                <div class="release-card coming">
+                    <div class="release-cover">
+                        <i class="fas fa-clock"></i>
+                        <span class="release-number">قريباً</span>
+                    </div>
+                    <div class="release-body">
+                        <h3>هيئه شباب عاشوراء</h3>
+                        <h4>العدد الثاني – قيد الإعداد</h4>
+                        <p>سيُصدر قريباً بإذن الله، اشترك في قناتنا ليصلك الإعلان.</p>
+                        <div class="release-meta">
+                            <span><i class="far fa-clock"></i> يُعلن قريباً</span>
+                        </div>
+                        <a href="https://t.me/Ashura_youth2" target="_blank" class="btn-download">
+                            <i class="fab fa-telegram"></i> تابعنا
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="channel-banner">
+                <p><i class="fas fa-bullhorn"></i> جميع إصداراتنا تجدونها على قناة التليغرام المخصصة:</p>
+                <a href="https://t.me/Ashura_youth2" target="_blank" class="btn-telegram-big">
+                    <i class="fab fa-telegram"></i> قناة إصدارات شباب عاشوراء
+                </a>
             </div>
-        </div>
 
-        <!-- رابط القناة المخصصة للإصدارات -->
-        <div class="releases-channel">
-            <p>📢 جميع إصداراتنا تجدونها على قناة التليغرام المخصصة:</p>
-            <a href="https://t.me/Ashura_youth2" target="_blank" class="telegram-btn">
-                💬 قناة إصدارات شباب عاشوراء
-            </a>
-        </div>
-
-        <footer>
-            <p>جميع الإصدارات حصرية – شباب عاشوراء</p>
-        </footer>
+            <footer class="main-footer">
+                <p>جميع الإصدارات حصرية – شباب عاشوراء</p>
+            </footer>
+        </main>
     </div>
 
     <script>
         (function() {
-            const page = document.querySelector('.page');
+            const app = document.querySelector('.app');
             const toggleBtn = document.getElementById('themeToggle');
-            const toggleIcon = toggleBtn.querySelector('.toggle-icon');
-            const savedTheme = localStorage.getItem('theme');
-            let currentTheme = savedTheme || 'dark';
+            const icon = toggleBtn.querySelector('i');
+            const savedTheme = localStorage.getItem('theme') || 'dark';
 
             function setTheme(theme) {
-                currentTheme = theme;
-                page.setAttribute('data-theme', theme);
+                app.setAttribute('data-theme', theme);
                 localStorage.setItem('theme', theme);
-                toggleIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+                icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
             }
 
             toggleBtn.addEventListener('click', () => {
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                setTheme(newTheme);
+                const current = app.getAttribute('data-theme');
+                setTheme(current === 'dark' ? 'light' : 'dark');
             });
 
-            setTheme(currentTheme);
+            setTheme(savedTheme);
         })();
     </script>
 </body>

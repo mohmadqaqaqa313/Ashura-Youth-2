@@ -3,37 +3,62 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>شباب عاشوراء - أقوال الإمام الحسين</title>
+    <title>شباب عاشوراء - الأحاديث</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="page hadith-page" data-theme="dark">
-        <header>
-            <h1>📚 أقوال الإمام الحسين عليه السلام</h1>
-            <div class="header-actions">
-                <a href="index.html" class="secondary-btn">🏠 العودة للرئيسية</a>
-                <button id="themeToggle" class="theme-toggle" aria-label="تبديل الوضع">
-                    <span class="toggle-icon">🌙</span>
+    <div class="app" data-theme="dark">
+        <nav class="sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-icon">⚔️</span>
+                <span class="brand-text">شباب عاشوراء</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li class="active"><a href="hadith.html"><i class="fas fa-book-open"></i> الأحاديث</a></li>
+                <li><a href="releases.html"><i class="fas fa-newspaper"></i> الإصدارات</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button id="themeToggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
-        </header>
+        </nav>
 
-        <div class="hadith-container">
-            <div class="hadith-display">
-                <p id="hadithText">حديث رقم 1</p>
-                <span id="hadithIndex">1 / 30</span>
-            </div>
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <h1>📚 أقوال الإمام الحسين عليه السلام</h1>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="btn-back">
+                        <i class="fas fa-arrow-right"></i> العودة
+                    </a>
+                </div>
+            </header>
 
-            <div class="hadith-controls">
-                <button id="prevBtn" class="control-btn">➡️ السابق</button>
-                <button id="nextBtn" class="control-btn">⬅️ التالي</button>
-            </div>
-        </div>
+            <section class="hadith-section">
+                <div class="hadith-card">
+                    <div class="hadith-number-badge" id="hadithIndex">1 / 30</div>
+                    <p class="hadith-text" id="hadithText">حديث رقم 1</p>
+                </div>
 
-        <footer>
-            <p>أقوال الإمام الحسين عليه السلام – شباب عاشوراء</p>
-        </footer>
+                <div class="hadith-nav">
+                    <button id="prevBtn" class="nav-btn">
+                        <i class="fas fa-arrow-right"></i> السابق
+                    </button>
+                    <button id="nextBtn" class="nav-btn">
+                        التالي <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+            </section>
+
+            <footer class="main-footer">
+                <p>أقوال الإمام الحسين عليه السلام – شباب عاشوراء</p>
+            </footer>
+        </main>
     </div>
 
     <script>
@@ -89,25 +114,23 @@
         updateHadith();
 
         (function() {
-            const page = document.querySelector('.page');
+            const app = document.querySelector('.app');
             const toggleBtn = document.getElementById('themeToggle');
-            const toggleIcon = toggleBtn.querySelector('.toggle-icon');
-            const savedTheme = localStorage.getItem('theme');
-            let currentTheme = savedTheme || 'dark';
+            const icon = toggleBtn.querySelector('i');
+            const savedTheme = localStorage.getItem('theme') || 'dark';
 
             function setTheme(theme) {
-                currentTheme = theme;
-                page.setAttribute('data-theme', theme);
+                app.setAttribute('data-theme', theme);
                 localStorage.setItem('theme', theme);
-                toggleIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+                icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
             }
 
             toggleBtn.addEventListener('click', () => {
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                setTheme(newTheme);
+                const current = app.getAttribute('data-theme');
+                setTheme(current === 'dark' ? 'light' : 'dark');
             });
 
-            setTheme(currentTheme);
+            setTheme(savedTheme);
         })();
     </script>
 </body>
