@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>شباب عاشوراء - الإصدارات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="page releases-page" data-theme="dark">
+        <header>
+            <h1>📚 إصدارات الهيئة</h1>
+            <div class="header-actions">
+                <a href="index.html" class="secondary-btn">🏠 العودة للرئيسية</a>
+                <button id="themeToggle" class="theme-toggle" aria-label="تبديل الوضع">
+                    <span class="toggle-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- قسم المجلة -->
+        <div class="magazine-container">
+            <!-- العدد الأول -->
+            <div class="magazine-issue">
+                <div class="issue-cover">
+                    <div class="cover-icon">📖</div>
+                    <div class="cover-badge">العدد الأول</div>
+                </div>
+                <div class="issue-details">
+                    <h3>مجلة شباب عاشوراء</h3>
+                    <p class="issue-title">علي الأصغر (عليه السلام)</p>
+                    <p class="issue-description">
+                        كتيبٌ يروي قصةَ سيدنا علي الأصغر (عليه السلام)، المظلومِ الشهيدِ، الذي وُسِّدَ الترابَ وهو في عمرِ الزهرةِ، ولم يُكفَّنْ إلا بدمِه وتربةِ كربلاءَ. جمعنا في هذا الكتيبِ ما تناثرَ من رواياتِ المخطوطاتِ القديمةِ والكتبِ المطبوعةِ ، بمساندةٍ وتوفيقٍ من ثلةٍ مباركة، وهم: قناة دراسة المقاتل، وقناة درر الأولياء في إرشاد العقلاء، وخادم فاطمة الزهراء السيد محمد الصادق الموسوي،آملين جميعاً في نشر هذا الكتاب بين أتباع أمير المؤمنين (عليه السلام) ليُشكل نبراساً في إحياء ذكرى هذا الرضيع المظلوم.
+
+                    </p>
+                    <div class="issue-meta">
+                        <span>📅 صدر بتاريخ: 20 / 8 / 2026</span>
+                        <span>📄 32 صفحة</span>
+                    </div>
+                    <!-- زر التحميل يوجه إلى قناة التليجرام -->
+                    <a href="https://t.me/Ashura_youth2/2" target="_blank" class="download-btn">
+                        📥 تحميل العدد
+                    </a>
+                </div>
+            </div>
+
+         
+
+            <!-- العدد الثاني (قريباً) -->
+            <div class="magazine-issue coming-soon">
+                <div class="issue-cover">
+                    <div class="cover-icon">📚</div>
+                    <div class="cover-badge">قريباً</div>
+                </div>
+                <div class="issue-details">
+                    <h3>مجلة شباب عاشوراء</h3>
+                    <p class="issue-title">العدد الثاني – قيد الإعداد</p>
+                    <p class="issue-description">
+                        سيُصدر قريباً بإذن الله، اشترك في قناتنا ليصلك الإعلان.
+                    </p>
+                    <div class="issue-meta">
+                        <span>📅 يُعلن قريباً</span>
+                    </div>
+                    <!-- زر التحميل يوجه إلى قناة التليجرام -->
+                    <a href="https://t.me/Ashura_youth2" target="_blank" class="download-btn">
+                        📥 تابعنا للإصدارات
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- رابط القناة المخصصة للإصدارات -->
+        <div class="releases-channel">
+            <p>📢 جميع إصداراتنا تجدونها على قناة التليغرام المخصصة:</p>
+            <a href="https://t.me/Ashura_youth2" target="_blank" class="telegram-btn">
+                💬 قناة إصدارات شباب عاشوراء
+            </a>
+        </div>
+
+        <footer>
+            <p>جميع الإصدارات حصرية – شباب عاشوراء</p>
+        </footer>
+    </div>
+
+    <script>
+        (function() {
+            const page = document.querySelector('.page');
+            const toggleBtn = document.getElementById('themeToggle');
+            const toggleIcon = toggleBtn.querySelector('.toggle-icon');
+            const savedTheme = localStorage.getItem('theme');
+            let currentTheme = savedTheme || 'dark';
+
+            function setTheme(theme) {
+                currentTheme = theme;
+                page.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                toggleIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            });
+
+            setTheme(currentTheme);
+        })();
+    </script>
+</body>
+</html>

@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>شباب عاشوراء</title>
+    <title>هيئه شباب عاشوراء</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- سمة الوضع الليلي افتراضياً، يمكن تغييرها بواسطة JavaScript -->
     <div class="page home-page" data-theme="dark">
         <header>
             <div class="logo">
                 <span class="logo-icon">⚔️</span>
-                <h1>شباب عاشوراء</h1>
+                <h1>هيئه شباب عاشوراء</h1>
             </div>
             <div class="header-actions">
                 <p class="subtitle">نهضة شبابية على درب الحسين (ع)</p>
-                <!-- زر التبديل بين الليل والنهار -->
                 <button id="themeToggle" class="theme-toggle" aria-label="تبديل الوضع">
                     <span class="toggle-icon">🌙</span>
                 </button>
@@ -34,7 +32,10 @@
                 </p>
                 <div class="btn-group">
                     <a href="hadith.html" class="primary-btn">
-                        <span>📖</span> اضغط هنا
+                        <span>📖</span> أقوال الإمام الحسين
+                    </a>
+                    <a href="releases.html" class="secondary-btn" style="border-color: var(--control-color); color: var(--control-color);">
+                        📚 الإصدارات
                     </a>
                 </div>
             </div>
@@ -51,7 +52,6 @@
         <section class="contact-section">
             <div class="contact-content">
                 <h3>📱 تواصل معنا</h3>
-                <p>انضم إلينا على التيلغرام وكن جزءاً من حملة شباب عاشوراء</p>
                 <a href="https://t.me/S_V_Cc" target="_blank" class="telegram-btn">
                     💬 @S_V_Cc
                 </a>
@@ -65,50 +65,25 @@
 
     <script>
         (function() {
-            // جلب العناصر
-            const root = document.documentElement;
             const page = document.querySelector('.page');
             const toggleBtn = document.getElementById('themeToggle');
             const toggleIcon = toggleBtn.querySelector('.toggle-icon');
-
-            // التحقق من التفضيل المحفوظ أو تفضيل النظام
             const savedTheme = localStorage.getItem('theme');
-            let currentTheme = savedTheme || 'dark'; // افتراضي ليلي
+            let currentTheme = savedTheme || 'dark';
 
-            // تطبيق السمة
             function setTheme(theme) {
                 currentTheme = theme;
                 page.setAttribute('data-theme', theme);
                 localStorage.setItem('theme', theme);
-
-                // تغيير الأيقونة
-                if (theme === 'dark') {
-                    toggleIcon.textContent = '🌙';
-                } else {
-                    toggleIcon.textContent = '☀️';
-                }
+                toggleIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
             }
 
-            // تبديل السمة
-            function toggleTheme() {
+            toggleBtn.addEventListener('click', () => {
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 setTheme(newTheme);
-            }
+            });
 
-            // مستمع الحدث للزر
-            toggleBtn.addEventListener('click', toggleTheme);
-
-            // تطبيق السمة المحفوظة عند التحميل
             setTheme(currentTheme);
-
-            // (اختياري) تتبع تفضيل النظام إذا لم يكن هناك تفضيل محفوظ
-            // لكننا جعلنا الافتراضي ليلي، يمكنك إلغاء التعليق على الكود التالي لتغيير ذلك:
-            /*
-            if (!savedTheme) {
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                setTheme(prefersDark ? 'dark' : 'light');
-            }
-            */
         })();
     </script>
 </body>
