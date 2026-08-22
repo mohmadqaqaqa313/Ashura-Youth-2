@@ -4,61 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>شباب عاشوراء - الأحاديث</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="app" data-theme="dark">
-        <nav class="sidebar">
-            <div class="sidebar-brand">
-                <span class="brand-icon">⚔️</span>
-                <span class="brand-text">شباب عاشوراء</span>
-            </div>
-            <ul class="sidebar-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-                <li class="active"><a href="hadith.html"><i class="fas fa-book-open"></i> الأحاديث</a></li>
-                <li><a href="releases.html"><i class="fas fa-newspaper"></i> الإصدارات</a></li>
-            </ul>
-            <div class="sidebar-footer">
-                <button id="themeToggle" class="theme-toggle-btn">
-                    <i class="fas fa-moon"></i>
-                </button>
+
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-brand">
+                    <span class="brand-icon">⚔️</span>
+                    <div>
+                        <span class="brand-text">شباب عاشوراء</span>
+                        <span class="brand-sub">الهيئة الشبابية</span>
+                    </div>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li class="active"><a href="hadith.html"><i class="fas fa-book-open"></i> الأحاديث</a></li>
+                    <li><a href="releases.html"><i class="fas fa-newspaper"></i> الإصدارات</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="https://t.me/S_V_Cc" target="_blank" class="nav-telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <button id="themeToggle" class="theme-toggle-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </nav>
 
         <main class="main-content">
-            <header class="top-header">
-                <div class="header-left">
-                    <h1>📚 أقوال الإمام الحسين عليه السلام</h1>
-                </div>
-                <div class="header-right">
+            <div class="container">
+
+                <div class="page-header">
+                    <h1><i class="fas fa-quran"></i> أقوال الإمام الحسين عليه السلام</h1>
                     <a href="index.html" class="btn-back">
-                        <i class="fas fa-arrow-right"></i> العودة
+                        <i class="fas fa-arrow-right"></i> العودة للرئيسية
                     </a>
                 </div>
-            </header>
 
-            <section class="hadith-section">
-                <div class="hadith-card">
-                    <div class="hadith-number-badge" id="hadithIndex">1 / 30</div>
-                    <p class="hadith-text" id="hadithText">حديث رقم 1</p>
-                </div>
+                <section class="hadith-section">
+                    <div class="hadith-card">
+                        <div class="hadith-number" id="hadithIndex">1 / 30</div>
+                        <p class="hadith-text" id="hadithText">حديث رقم 1</p>
+                    </div>
 
-                <div class="hadith-nav">
-                    <button id="prevBtn" class="nav-btn">
-                        <i class="fas fa-arrow-right"></i> السابق
-                    </button>
-                    <button id="nextBtn" class="nav-btn">
-                        التالي <i class="fas fa-arrow-left"></i>
-                    </button>
-                </div>
-            </section>
+                    <div class="hadith-navigation">
+                        <button id="prevBtn" class="nav-btn">
+                            <i class="fas fa-arrow-right"></i> السابق
+                        </button>
+                        <button id="nextBtn" class="nav-btn">
+                            التالي <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </section>
 
-            <footer class="main-footer">
-                <p>أقوال الإمام الحسين عليه السلام – شباب عاشوراء</p>
-            </footer>
+                <footer class="main-footer">
+                    <p>أقوال الإمام الحسين عليه السلام – شباب عاشوراء</p>
+                </footer>
+
+            </div>
         </main>
+
     </div>
 
     <script>

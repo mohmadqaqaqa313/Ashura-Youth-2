@@ -4,90 +4,110 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>شباب عاشوراء - الموقع الرسمي</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="app" data-theme="dark">
-        <!-- شريط جانبي للتنقل (اختياري) -->
-        <nav class="sidebar">
-            <div class="sidebar-brand">
-                <span class="brand-icon">⚔️</span>
-                <span class="brand-text">هيئه شباب عاشوراء </span>
-            </div>
-            <ul class="sidebar-menu">
-                <li class="active"><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-                <li><a href="hadith.html"><i class="fas fa-book-open"></i> أقوال الإمام الحسين</a></li>
-                <li><a href="releases.html"><i class="fas fa-newspaper"></i> الإصدارات</a></li>
-            </ul>
-            <div class="sidebar-footer">
-                <button id="themeToggle" class="theme-toggle-btn">
-                    <i class="fas fa-moon"></i>
-                </button>
+
+        <!-- ======= شريط التنقل العلوي ======= -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-brand">
+                    <span class="brand-icon">⚔️</span>
+                    <div>
+                        <span class="brand-text">شباب عاشوراء</span>
+                        <span class="brand-sub">الهيئة الشبابية</span>
+                    </div>
+                </a>
+                <ul class="nav-menu">
+                    <li class="active"><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="hadith.html"><i class="fas fa-book-open"></i> أقوال الإمام الحسين</a></li>
+                    <li><a href="releases.html"><i class="fas fa-newspaper"></i> الإصدارات</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="https://t.me/S_V_Cc" target="_blank" class="nav-telegram" title="تواصل معنا">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <button id="themeToggle" class="theme-toggle-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </nav>
 
-        <!-- المحتوى الرئيسي -->
+        <!-- ======= المحتوى الرئيسي ======= -->
         <main class="main-content">
-            <header class="top-header">
-                <div class="header-left">
-                    <h1>🌹 شباب عاشوراء</h1>
-                    <p class="tagline">نهضة شبابية على درب الحسين (ع)</p>
+            <div class="container">
+
+                <!-- البانر الرئيسي -->
+                <section class="hero-banner">
+                    <div class="hero-text">
+                        <span class="hero-badge">🌿 نستلهم من عاشوراء</span>
+                        <h1>نحو بناء مجتمعٍ واعٍ</h1>
+                        <p>
+                            شباب اليوم هم قادة الغد، نستلهم من ثورة عاشوراء قيم العدل
+                            والكرامة والتضحية.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="hadith.html" class="btn-primary">
+                                <i class="fas fa-book-open"></i> أقوال الإمام الحسين
+                            </a>
+                            <a href="releases.html" class="btn-secondary">
+                                <i class="fas fa-newspaper"></i> الإصدارات
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-icon-large">⚔️</div>
+                    </div>
+                </section>
+
+                <!-- فاصل زخرفي -->
+                <div class="ornament-divider">
+                    <span>✦ ✦ ✦</span>
                 </div>
-                <div class="header-right">
-                    <a href="https://t.me/S_V_Cc" target="_blank" class="telegram-mini">
+
+                <!-- بطاقات الخدمات -->
+                <section class="service-grid">
+                    <div class="service-card">
+                        <i class="fas fa-quran"></i>
+                        <h3>أقوال الإمام الحسين</h3>
+                        <p>25 قولاً مأثوراً من أقوال سيد الشهداء</p>
+                        <a href="hadith.html" class="service-link">اطلع عليها <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-book"></i>
+                        <h3>إصدارات الهيئة</h3>
+                        <p>أحدث الإصدارات والمجلات الصادرة</p>
+                        <a href="releases.html" class="service-link">تصفح الإصدارات <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                    <div class="service-card">
                         <i class="fab fa-telegram"></i>
+                        <h3>قناة الإصدارات</h3>
+                        <p>تابعنا على التليغرام لتصلك جميع الإصدارات</p>
+                        <a href="https://t.me/Ashura_youth2" target="_blank" class="service-link">انضم الآن <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </section>
+
+                <!-- قسم التواصل -->
+                <section class="contact-box">
+                    <h3><i class="fas fa-paper-plane"></i> تواصل معنا</h3>
+                    <p>انضم إلينا على التيلغرام وكن جزءاً من حملة شباب عاشوراء</p>
+                    <a href="https://t.me/S_V_Cc" target="_blank" class="btn-telegram">
+                        <i class="fab fa-telegram"></i> @S_V_Cc
                     </a>
-                </div>
-            </header>
+                </section>
 
-            <section class="hero-section">
-                <div class="hero-text">
-                    <span class="hero-badge">نستلهم من عاشوراء</span>
-                    <h2>نحو بناء مجتمعٍ واعٍ</h2>
-                    <p>
-                        شباب اليوم هم قادة الغد، نستلهم من ثورة عاشوراء قيم العدل
-                        والكرامة والتضحية.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="hadith.html" class="btn-primary">
-                            <i class="fas fa-book-open"></i> أقوال الإمام الحسين
-                        </a>
-                        <a href="releases.html" class="btn-secondary">
-                            <i class="fas fa-newspaper"></i> الإصدارات
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-circle">
-                        <span class="hero-icon">⚔️</span>
-                    </div>
-                </div>
-            </section>
+                <!-- التذييل -->
+                <footer class="main-footer">
+                    <p>© 2026 شباب عاشوراء – جميع الحقوق محفوظة</p>
+                </footer>
 
-            <section class="quick-links">
-                <a href="hadith.html" class="quick-card">
-                    <i class="fas fa-quran"></i>
-                    <h4>أقوال الإمام الحسين</h4>
-                    <p>30 قولاً مأثوراً</p>
-                </a>
-                <a href="releases.html" class="quick-card">
-                    <i class="fas fa-book"></i>
-                    <h4>إصدارات الهيئة</h4>
-                    <p>اطلع على أحدث الإصدارات</p>
-                </a>
-                <a href="https://t.me/Ashura_youth2" target="_blank" class="quick-card">
-                    <i class="fab fa-telegram"></i>
-                    <h4>قناة الإصدارات</h4>
-                    <p>تابعنا على التليغرام</p>
-                </a>
-            </section>
-
-            <footer class="main-footer">
-                <p>© 2026 شباب عاشوراء – جميع الحقوق محفوظة</p>
-            </footer>
+            </div>
         </main>
+
     </div>
 
     <script>
