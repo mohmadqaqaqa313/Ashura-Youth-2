@@ -3,7 +3,6 @@
 
 /* ======= متغيرات الألوان ======= */
 :root {
-    /* الألوان الرئيسية */
     --color-gold: #c9a84c;
     --color-gold-light: #e8d08a;
     --color-gold-dark: #a8872e;
@@ -14,24 +13,21 @@
     --color-ivory: #f5efe6;
     --color-black: #0e0a0a;
 
-    /* الخلفيات */
     --bg-body: #0e0a0a;
     --bg-surface: rgba(20, 14, 14, 0.92);
     --bg-card: rgba(30, 20, 20, 0.7);
     --bg-card-hover: rgba(50, 35, 35, 0.85);
+    --bg-hover: rgba(255, 255, 255, 0.04);
 
-    /* النصوص */
     --text-primary: #f5efe6;
     --text-secondary: rgba(245, 239, 230, 0.8);
     --text-muted: rgba(245, 239, 230, 0.4);
 
-    /* الحدود والظلال */
     --border-gold: rgba(201, 168, 76, 0.3);
     --border-gold-strong: rgba(201, 168, 76, 0.6);
     --shadow-heavy: 0 15px 50px rgba(0, 0, 0, 0.6);
     --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.3);
 
-    /* الزخارف */
     --ornament: '✦';
 }
 
@@ -40,6 +36,7 @@
     --bg-surface: rgba(255, 252, 248, 0.95);
     --bg-card: rgba(255, 252, 248, 0.85);
     --bg-card-hover: rgba(245, 239, 230, 0.95);
+    --bg-hover: rgba(0, 0, 0, 0.03);
     --text-primary: #2c1810;
     --text-secondary: rgba(44, 24, 16, 0.8);
     --text-muted: rgba(44, 24, 16, 0.4);
@@ -274,7 +271,7 @@ body {
     border-color: var(--color-gold);
 }
 
-/* ======= البانر الرئيسي (الصفحة الرئيسية) ======= */
+/* ======= البانر الرئيسي ======= */
 .hero-banner {
     display: flex;
     flex-wrap: wrap;
@@ -445,7 +442,7 @@ body {
 /* ======= بطاقات الخدمات ======= */
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
     margin: 3rem 0;
 }
